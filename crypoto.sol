@@ -3,7 +3,7 @@ pragma solidity ^0.8.7;
 import "hardhat/console.sol";
 
 contract CryptoBook {
-    // owner DAD
+    // owner 
     address owner;
 
     event LogBookFundingReceived(address addr, uint amount, uint contractBalance);
@@ -12,7 +12,7 @@ contract CryptoBook {
         owner = msg.sender;
     }
 
-    // define Kid
+    // define book
     struct Book {
         address payable walletAddress;
         string name;
@@ -44,7 +44,7 @@ contract CryptoBook {
         return address(this).balance;
     }
 
-    //deposit funds to contract, specifically to a kid's account
+    //deposit funds to contract, specifically to a owner's account
     function deposit(address walletAddress) payable public {
         addToBooksBalance(walletAddress);
     }
